@@ -12,7 +12,7 @@ const GridItem = (props) => {
         </Link>
       </div>
       <div className="cellTitle">
-        <Link to={props.link}><Typography variant="h5">{props.title}</Typography></Link>
+        <Link className="gameTitle" to={props.link}><Typography variant="h5">{props.title}</Typography></Link>
       </div>
     </Grid>
   )

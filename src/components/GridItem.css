@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.gameCell:hover {
+  background-color: #eee;
+}
+
 .gameCell > div {
   margin: 0.6rem auto;
 }
@@ -14,4 +18,9 @@
 
 .gameIcon {
   width: 100%;
+}
+
+.gameTitle {
+  text-decoration: none;
+  color: black;
 }
