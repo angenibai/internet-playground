@@ -1,0 +1,17 @@
+.gameCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gameCell > div {
+  margin: 0.6rem auto;
+}
+
+.cellIcon {
+  width: 60%;
+}
+
+.gameIcon {
+  width: 100%;
+}

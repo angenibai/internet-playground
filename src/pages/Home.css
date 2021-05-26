@@ -8,5 +8,8 @@
 
 .gamesContainer {
   max-width: 1200px;
-  margin: 1rem auto;
+}
+
+header {
+  margin: 1.5rem auto;
 }
