@@ -7,7 +7,9 @@ const GridItem = (props) => {
   return (
     <Grid item xs={12} sm={4} className="gameCell">
       <div className="cellIcon">
-        <img className="gameIcon" src={props.icon} alt={props.alt} />
+        <Link to={props.link}>
+          <img className="gameIcon" src={props.icon} alt={props.alt} />
+        </Link>
       </div>
       <div className="cellTitle">
         <Link to={props.link}><Typography variant="h5">{props.title}</Typography></Link>

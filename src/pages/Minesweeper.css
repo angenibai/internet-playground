@@ -5,8 +5,9 @@
   align-items: center;
 }
 
-header {
+.title {
   margin: 1.5rem auto;
+  margin-bottom: 0.5rem;
 }
 
 .board {

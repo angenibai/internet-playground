@@ -239,9 +239,9 @@ function Minesweeper() {
 
   return (
     <div className="MinesweeperApp">
-      <header>
+      <div className="title">
         <Typography variant="h2">minesweeper</Typography>
-      </header>
+      </div>
       <main>
         <div className="minesweeper">
           
