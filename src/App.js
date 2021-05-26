@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import TicTacToe from './pages/TicTacToe';
+import Minesweeper from './pages/Minesweeper';
 
 function App() {
 
@@ -22,6 +23,14 @@ function App() {
             </Button>
           </header>
           <TicTacToe />
+        </Route>
+        <Route exact path="/minesweeper">
+          <header>
+            <Button className="back" component={Link} to="/">
+              Back
+            </Button>
+          </header>
+          <Minesweeper />
         </Route>
       </Router>
     </div>

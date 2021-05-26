@@ -21,9 +21,9 @@ const Home = () => {
         />
         <GridItem
           icon={ticTacToeIcon}
-          alt="tic tac toe icon"
-          link="/tictactoe"
-          title="Tic Tac Toe"
+          alt="minesweeper icon"
+          link="/minesweeper"
+          title="Minesweeper"
         /> 
         <GridItem
           icon={ticTacToeIcon}
