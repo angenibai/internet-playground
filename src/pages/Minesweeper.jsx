@@ -288,7 +288,7 @@ function Minesweeper() {
             <Typography variant="h5">{gameReaction}</Typography>
           </div>
           <div className="gameActions">
-            <Button variant="outlined" color="secondary" onClick={() => startNewGame(WIDTH, HEIGHT)}>Restart</Button>
+            <Button variant={gameState == "ongoing" ? "outlined" : "contained"} color="secondary" onClick={() => startNewGame(WIDTH, HEIGHT)}>Restart</Button>
           </div> 
         </div>
       </main>
