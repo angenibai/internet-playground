@@ -31,11 +31,6 @@ function Minesweeper() {
   const [gameReaction, setGameReaction] = useState(":)");
   const [clickAction, setClickAction] = useState(MINE);
 
-  const printBoard = (board) => {
-    console.log("BOARD");
-    board.forEach((row, r) => console.log(`${r}: ${row.join(" ")}`));
-  };
-
   const updateBoardState = (row, col, newVal) => {
     const newBoard = [...boardState];
     newBoard[row][col] = newVal;
@@ -173,11 +168,9 @@ function Minesweeper() {
         const revealed = reveal(0, row, col);
         if (boardData[row][col] === MINE) {
           setGameState("lost");
-          console.log("game lost");
         } else {
           if (revealedLeft - revealed === 0) {
             setGameState("won");
-            console.log("game won");
           } else {
             setRevealedLeft(revealedLeft - revealed);
           }
@@ -219,14 +212,6 @@ function Minesweeper() {
       setGameReaction(":)");
     }
   }, [gameState]);
-
-  useEffect(() => {
-    printBoard(boardData);
-  }, [boardData]);
-
-  useEffect(() => {
-    console.log(revealedLeft);
-  }, [revealedLeft]);
 
   return (
     <div className="MinesweeperApp">
