@@ -99,6 +99,7 @@ const TicTacToe = () => {
     } else {
       setGameState("ongoing");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [game]);
 
   return (

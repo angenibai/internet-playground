@@ -192,6 +192,7 @@ function Minesweeper() {
 
   useEffect(() => {
     startNewGame(WIDTH, HEIGHT);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -211,6 +212,7 @@ function Minesweeper() {
     } else if (gameState === "ongoing") {
       setGameReaction(":)");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameState]);
 
   return (
