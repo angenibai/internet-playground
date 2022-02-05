@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/angenibai/internet-playground/static/css/main.3ea27e4d.chunk.css",
+    "main.js": "/angenibai/internet-playground/static/js/main.5ef7ef38.chunk.js",
+    "main.js.map": "/angenibai/internet-playground/static/js/main.5ef7ef38.chunk.js.map",
+    "runtime-main.js": "/angenibai/internet-playground/static/js/runtime-main.28539c9d.js",
+    "runtime-main.js.map": "/angenibai/internet-playground/static/js/runtime-main.28539c9d.js.map",
+    "static/js/2.65a101b4.chunk.js": "/angenibai/internet-playground/static/js/2.65a101b4.chunk.js",
+    "static/js/2.65a101b4.chunk.js.map": "/angenibai/internet-playground/static/js/2.65a101b4.chunk.js.map",
+    "static/js/3.dfd6f89a.chunk.js": "/angenibai/internet-playground/static/js/3.dfd6f89a.chunk.js",
+    "static/js/3.dfd6f89a.chunk.js.map": "/angenibai/internet-playground/static/js/3.dfd6f89a.chunk.js.map",
+    "index.html": "/angenibai/internet-playground/index.html",
+    "static/css/main.3ea27e4d.chunk.css.map": "/angenibai/internet-playground/static/css/main.3ea27e4d.chunk.css.map",
+    "static/js/2.65a101b4.chunk.js.LICENSE.txt": "/angenibai/internet-playground/static/js/2.65a101b4.chunk.js.LICENSE.txt",
+    "static/media/minesweeper-icon.f525e4e1.png": "/angenibai/internet-playground/static/media/minesweeper-icon.f525e4e1.png",
+    "static/media/tictactoe-icon.df776d40.png": "/angenibai/internet-playground/static/media/tictactoe-icon.df776d40.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.28539c9d.js",
+    "static/js/2.65a101b4.chunk.js",
+    "static/css/main.3ea27e4d.chunk.css",
+    "static/js/main.5ef7ef38.chunk.js"
+  ]
+}
