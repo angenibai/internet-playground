@@ -1,0 +1,11 @@
+name: Deploy to Github Pages on merge to main
+"on":
+  push:
+    branches:
+      - main
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: yarn deploy
