@@ -1,7 +1,7 @@
-import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
-import { Link } from 'react-router-dom';
-import './GridItem.css';
+import React from "react";
+import { Grid, Typography } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import "./GridItem.css";
 
 const GridItem = (props) => {
   return (
@@ -12,10 +12,12 @@ const GridItem = (props) => {
         </Link>
       </div>
       <div className="cellTitle">
-        <Link className="gameTitle" to={props.link}><Typography variant="h5">{props.title}</Typography></Link>
+        <Link className="gameTitle" to={props.link}>
+          <Typography variant="h5">{props.title}</Typography>
+        </Link>
       </div>
     </Grid>
-  )
-}
+  );
+};
 
 export default GridItem;

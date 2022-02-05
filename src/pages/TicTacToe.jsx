@@ -147,6 +147,6 @@ const TicTacToe = () => {
       </main>
     </div>
   );
-}
+};
 
 export default TicTacToe;

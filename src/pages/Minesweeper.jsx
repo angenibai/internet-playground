@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Typography from "@material-ui/core/Typography";
-import ToggleButton from '@material-ui/lab/ToggleButton';
-import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+import ToggleButton from "@material-ui/lab/ToggleButton";
+import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import Button from "@material-ui/core/Button";
 import "./Minesweeper.css";
 
@@ -16,7 +16,7 @@ const REVEALED = "O";
 /**
  * Returns random integer 0 <= n < max
  */
- const getRandomInt = (max) => {
+const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.ceil(max));
 };
 
@@ -27,22 +27,13 @@ function Minesweeper() {
   const [boardState, setBoardState] = useState([]);
   const [flagsLeft, setFlagsLeft] = useState(0);
   const [revealedLeft, setRevealedLeft] = useState(0);
-  const [gameState, setGameState] = useState('ongoing');
-  const [gameReaction, setGameReaction] = useState(':)');
+  const [gameState, setGameState] = useState("ongoing");
+  const [gameReaction, setGameReaction] = useState(":)");
   const [clickAction, setClickAction] = useState(MINE);
 
   const printBoard = (board) => {
     console.log("BOARD");
-    board.map((row, r) => {
-      console.log(`${r}: ${row.join(' ')}`);
-    })
-  }
-
-  const updateBoardData = (row, col, newVal) => {
-    const newBoard = [...boardData];
-    newBoard[row][col] = newVal;
-    setBoardData(newBoard);
-    return newBoard;
+    board.forEach((row, r) => console.log(`${r}: ${row.join(" ")}`));
   };
 
   const updateBoardState = (row, col, newVal) => {
@@ -67,7 +58,7 @@ function Minesweeper() {
       }
     }
     return board;
-  }
+  };
 
   // get the indices of neighbouring cells
   const getNeighbours = (row, col) => {
@@ -75,34 +66,34 @@ function Minesweeper() {
 
     // row above
     if (row > 0) {
-      neighbours.push({"row":row-1, "col":col});
+      neighbours.push({ row: row - 1, col: col });
       if (col > 0) {
-        neighbours.push({"row":row-1, "col":col-1});
+        neighbours.push({ row: row - 1, col: col - 1 });
       }
       if (col < WIDTH - 1) {
-        neighbours.push({"row":row-1, "col":col+1});
+        neighbours.push({ row: row - 1, col: col + 1 });
       }
     }
     // row below
     if (row < HEIGHT - 1) {
-      neighbours.push({"row":row+1, "col":col});
+      neighbours.push({ row: row + 1, col: col });
       if (col > 0) {
-        neighbours.push({"row":row+1, "col":col-1});
+        neighbours.push({ row: row + 1, col: col - 1 });
       }
       if (col < WIDTH - 1) {
-        neighbours.push({"row":row+1, "col":col+1});
+        neighbours.push({ row: row + 1, col: col + 1 });
       }
     }
     // either side
     if (col > 0) {
-      neighbours.push({"row":row, "col":col-1});
+      neighbours.push({ row: row, col: col - 1 });
     }
     if (col < WIDTH - 1) {
-      neighbours.push({"row":row, "col":col+1});
+      neighbours.push({ row: row, col: col + 1 });
     }
 
     return neighbours;
-  }
+  };
 
   // sets the numbers that get revealed after clicking
   const generateNums = (board) => {
@@ -113,27 +104,29 @@ function Minesweeper() {
         }
 
         let neighbours = getNeighbours(row, col);
-        let neighbouringMines = neighbours.filter(coord => board[coord.row][coord.col] === MINE).length;
+        let neighbouringMines = neighbours.filter(
+          (coord) => board[coord.row][coord.col] === MINE
+        ).length;
         board[row][col] = neighbouringMines;
       }
     }
     return board;
-  }
+  };
 
   const reveal = (revealed, row, col) => {
     updateBoardState(row, col, REVEALED);
     revealed += 1;
-    
+
     if (boardData[row][col] === 0) {
       let neighbours = getNeighbours(row, col);
-      neighbours.map(coord => {
+      neighbours.forEach((coord) => {
         if (boardState[coord.row][coord.col] !== REVEALED) {
           revealed = reveal(revealed, coord.row, coord.col);
         }
       });
     }
     return revealed;
-  }
+  };
 
   const resetBoardData = (width, height) => {
     let newData = [];
@@ -143,7 +136,7 @@ function Minesweeper() {
     }
     setBoardData(newData);
     return newData;
-  }
+  };
 
   const resetBoardState = (width, height) => {
     let newState = [];
@@ -153,7 +146,7 @@ function Minesweeper() {
     }
     setBoardState(newState);
     return newState;
-  }
+  };
 
   const startNewGame = (width, height) => {
     let newBoard = resetBoardData(width, height);
@@ -169,7 +162,7 @@ function Minesweeper() {
     resetBoardState(width, height);
 
     setGameState("ongoing");
- };
+  };
 
   const clickCell = (e, row, col) => {
     if (e.button === 0 && gameState === "ongoing") {
@@ -219,11 +212,9 @@ function Minesweeper() {
         }
       }
       setGameReaction("X(");
-
     } else if (gameState === "won") {
       // win graphic?
       setGameReaction("8)");
-
     } else if (gameState === "ongoing") {
       setGameReaction(":)");
     }
@@ -244,7 +235,6 @@ function Minesweeper() {
       </div>
       <main>
         <div className="minesweeper">
-          
           <div className="gameDetails">
             <Typography variant="h5">{flagsLeft} mines left</Typography>
           </div>
@@ -252,7 +242,9 @@ function Minesweeper() {
             <ToggleButtonGroup
               value={clickAction}
               exclusive
-              onChange={(e, newAction) => {setClickAction(newAction)}}
+              onChange={(e, newAction) => {
+                setClickAction(newAction);
+              }}
               aria-label="toggle click action"
             >
               <ToggleButton value={MINE} aria-label="click to mine">
@@ -275,9 +267,13 @@ function Minesweeper() {
                   </div>
                 ) : (
                   <div
-                    className={state === FLAG ? "cell flagCell" : "cell hiddenCell"}
+                    className={
+                      state === FLAG ? "cell flagCell" : "cell hiddenCell"
+                    }
                     onClick={(e) => clickCell(e, i, j)}
-                    onContextMenu={() => {return false}}
+                    onContextMenu={() => {
+                      return false;
+                    }}
                     key={`${i}-${j}`}
                   ></div>
                 )
@@ -288,8 +284,14 @@ function Minesweeper() {
             <Typography variant="h5">{gameReaction}</Typography>
           </div>
           <div className="gameActions">
-            <Button variant={gameState == "ongoing" ? "outlined" : "contained"} color="secondary" onClick={() => startNewGame(WIDTH, HEIGHT)}>Restart</Button>
-          </div> 
+            <Button
+              variant={gameState === "ongoing" ? "outlined" : "contained"}
+              color="secondary"
+              onClick={() => startNewGame(WIDTH, HEIGHT)}
+            >
+              Restart
+            </Button>
+          </div>
         </div>
       </main>
     </div>

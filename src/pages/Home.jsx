@@ -1,12 +1,11 @@
-import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
-import './Home.css';
-import ticTacToeIcon from '../images/tictactoe-icon.png';
-import minesweeperIcon from '../images/minesweeper-icon.png';
-import GridItem from '../components/GridItem';
+import React from "react";
+import { Grid, Typography } from "@material-ui/core";
+import "./Home.css";
+import ticTacToeIcon from "../images/tictactoe-icon.png";
+import minesweeperIcon from "../images/minesweeper-icon.png";
+import GridItem from "../components/GridItem";
 
 const Home = () => {
-
   return (
     <div className="Home">
       <header>
@@ -24,11 +23,10 @@ const Home = () => {
           alt="minesweeper icon"
           link="/minesweeper"
           title="Minesweeper"
-        /> 
-       
+        />
       </Grid>
     </div>
-  )
-}
+  );
+};
 
 export default Home;
