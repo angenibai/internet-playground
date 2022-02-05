@@ -1,6 +1,6 @@
 import { Button } from "@material-ui/core";
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
